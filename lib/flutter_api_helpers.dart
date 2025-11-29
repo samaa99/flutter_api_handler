@@ -19,4 +19,4 @@ export 'src/constants/api_constants.dart';
 export 'src/constants/default_error_messages.dart';
 
 // Export shared models
-export 'shared/models/api_response.dart';
+export 'src/models/api_response.dart';

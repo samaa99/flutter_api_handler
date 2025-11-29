@@ -19,15 +19,8 @@ Add this to your package's `pubspec.yaml` file:
 dependencies:
   flutter_api_helpers:
     git:
-      url: https://github.com/yourusername/flutter_api_helpers.git
+      url: https://github.com/samaa99/flutter_api_handler.git
       ref: main
-```
-
-Or if published to pub.dev:
-
-```yaml
-dependencies:
-  flutter_api_helpers: ^1.0.0
 ```
 
 ## Quick Start

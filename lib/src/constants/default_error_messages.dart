@@ -130,4 +130,86 @@ class DefaultErrorMessages {
   static const String errorStorage = "Storage Error";
   static const String errorStorageMessage = 
       "There was an issue with file storage or access.";
+
+  // Additional HTTP status errors (4xx client errors)
+  static const String errorLengthRequired = "Length Required";
+  static const String errorLengthRequiredMessage = 
+      "The request is missing the Content-Length header.";
+      
+  static const String errorPreconditionFailed = "Precondition Failed";
+  static const String errorPreconditionFailedMessage = 
+      "One or more request preconditions failed.";
+      
+  static const String errorUriTooLong = "URI Too Long";
+  static const String errorUriTooLongMessage = 
+      "The request URL is too long.";
+      
+  static const String errorUnsupportedMediaType = "Unsupported Media Type";
+  static const String errorUnsupportedMediaTypeMessage = 
+      "The media type is not supported.";
+      
+  static const String errorRangeNotSatisfiable = "Range Not Satisfiable";
+  static const String errorRangeNotSatisfiableMessage = 
+      "The requested range cannot be satisfied.";
+      
+  static const String errorExpectationFailed = "Expectation Failed";
+  static const String errorExpectationFailedMessage = 
+      "The server cannot meet the Expect request header.";
+      
+  static const String errorTeapot = "I'm a teapot";
+  static const String errorTeapotMessage = 
+      "The server refuses to brew coffee because it's a teapot.";
+      
+  static const String errorMisdirectedRequest = "Misdirected Request";
+  static const String errorMisdirectedRequestMessage = 
+      "The request was directed to a server that cannot produce a response.";
+      
+  static const String errorLocked = "Locked";
+  static const String errorLockedMessage = 
+      "The resource is locked.";
+      
+  static const String errorFailedDependency = "Failed Dependency";
+  static const String errorFailedDependencyMessage = 
+      "The request failed due to failure of a previous request.";
+      
+  static const String errorUpgradeRequired = "Upgrade Required";
+  static const String errorUpgradeRequiredMessage = 
+      "Please upgrade your client to continue.";
+      
+  static const String errorPreconditionRequired = "Precondition Required";
+  static const String errorPreconditionRequiredMessage = 
+      "The request requires preconditions to be specified.";
+      
+  static const String errorRequestHeaderFieldsTooLarge = "Request Header Fields Too Large";
+  static const String errorRequestHeaderFieldsTooLargeMessage = 
+      "The request headers are too large.";
+      
+  static const String errorUnavailableForLegalReasons = "Unavailable For Legal Reasons";
+  static const String errorUnavailableForLegalReasonsMessage = 
+      "This content is unavailable for legal reasons.";
+
+  // Additional HTTP status errors (5xx server errors)
+  static const String errorHttpVersionNotSupported = "HTTP Version Not Supported";
+  static const String errorHttpVersionNotSupportedMessage = 
+      "The HTTP version used in the request is not supported.";
+      
+  static const String errorVariantAlsoNegotiates = "Variant Also Negotiates";
+  static const String errorVariantAlsoNegotiatesMessage = 
+      "There is an internal configuration error.";
+      
+  static const String errorInsufficientStorage = "Insufficient Storage";
+  static const String errorInsufficientStorageMessage = 
+      "The server is unable to store the representation.";
+      
+  static const String errorLoopDetected = "Loop Detected";
+  static const String errorLoopDetectedMessage = 
+      "The server detected an infinite loop.";
+      
+  static const String errorNotExtended = "Not Extended";
+  static const String errorNotExtendedMessage = 
+      "Further extensions to the request are required.";
+      
+  static const String errorNetworkAuthenticationRequired = "Network Authentication Required";
+  static const String errorNetworkAuthenticationRequiredMessage = 
+      "Network authentication is required to access this resource.";
 }

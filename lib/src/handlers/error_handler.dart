@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../../shared/models/api_response.dart';
+import '../models/api_response.dart';
 import '../models/api_error_model.dart';
 import '../models/error_type.dart';
 import '../constants/default_error_messages.dart';
@@ -72,6 +72,46 @@ class CustomErrorMessages {
   final String? errorAccessDeniedMessage;
   final String? errorStorage;
   final String? errorStorageMessage;
+  final String? errorLengthRequired;
+  final String? errorLengthRequiredMessage;
+  final String? errorPreconditionFailed;
+  final String? errorPreconditionFailedMessage;
+  final String? errorUriTooLong;
+  final String? errorUriTooLongMessage;
+  final String? errorUnsupportedMediaType;
+  final String? errorUnsupportedMediaTypeMessage;
+  final String? errorRangeNotSatisfiable;
+  final String? errorRangeNotSatisfiableMessage;
+  final String? errorExpectationFailed;
+  final String? errorExpectationFailedMessage;
+  final String? errorTeapot;
+  final String? errorTeapotMessage;
+  final String? errorMisdirectedRequest;
+  final String? errorMisdirectedRequestMessage;
+  final String? errorLocked;
+  final String? errorLockedMessage;
+  final String? errorFailedDependency;
+  final String? errorFailedDependencyMessage;
+  final String? errorUpgradeRequired;
+  final String? errorUpgradeRequiredMessage;
+  final String? errorPreconditionRequired;
+  final String? errorPreconditionRequiredMessage;
+  final String? errorRequestHeaderFieldsTooLarge;
+  final String? errorRequestHeaderFieldsTooLargeMessage;
+  final String? errorUnavailableForLegalReasons;
+  final String? errorUnavailableForLegalReasonsMessage;
+  final String? errorHttpVersionNotSupported;
+  final String? errorHttpVersionNotSupportedMessage;
+  final String? errorVariantAlsoNegotiates;
+  final String? errorVariantAlsoNegotiatesMessage;
+  final String? errorInsufficientStorage;
+  final String? errorInsufficientStorageMessage;
+  final String? errorLoopDetected;
+  final String? errorLoopDetectedMessage;
+  final String? errorNotExtended;
+  final String? errorNotExtendedMessage;
+  final String? errorNetworkAuthenticationRequired;
+  final String? errorNetworkAuthenticationRequiredMessage;
 
   const CustomErrorMessages({
     this.errorNoInternet,
@@ -138,6 +178,46 @@ class CustomErrorMessages {
     this.errorAccessDeniedMessage,
     this.errorStorage,
     this.errorStorageMessage,
+    this.errorLengthRequired,
+    this.errorLengthRequiredMessage,
+    this.errorPreconditionFailed,
+    this.errorPreconditionFailedMessage,
+    this.errorUriTooLong,
+    this.errorUriTooLongMessage,
+    this.errorUnsupportedMediaType,
+    this.errorUnsupportedMediaTypeMessage,
+    this.errorRangeNotSatisfiable,
+    this.errorRangeNotSatisfiableMessage,
+    this.errorExpectationFailed,
+    this.errorExpectationFailedMessage,
+    this.errorTeapot,
+    this.errorTeapotMessage,
+    this.errorMisdirectedRequest,
+    this.errorMisdirectedRequestMessage,
+    this.errorLocked,
+    this.errorLockedMessage,
+    this.errorFailedDependency,
+    this.errorFailedDependencyMessage,
+    this.errorUpgradeRequired,
+    this.errorUpgradeRequiredMessage,
+    this.errorPreconditionRequired,
+    this.errorPreconditionRequiredMessage,
+    this.errorRequestHeaderFieldsTooLarge,
+    this.errorRequestHeaderFieldsTooLargeMessage,
+    this.errorUnavailableForLegalReasons,
+    this.errorUnavailableForLegalReasonsMessage,
+    this.errorHttpVersionNotSupported,
+    this.errorHttpVersionNotSupportedMessage,
+    this.errorVariantAlsoNegotiates,
+    this.errorVariantAlsoNegotiatesMessage,
+    this.errorInsufficientStorage,
+    this.errorInsufficientStorageMessage,
+    this.errorLoopDetected,
+    this.errorLoopDetectedMessage,
+    this.errorNotExtended,
+    this.errorNotExtendedMessage,
+    this.errorNetworkAuthenticationRequired,
+    this.errorNetworkAuthenticationRequiredMessage,
   });
 }
 
@@ -355,16 +435,16 @@ class ErrorHandler {
 
       case 411:
         return UiError(
-          title: "Length Required",
-          message: serverMessage ?? "The request is missing the Content-Length header.",
+          title: DefaultErrorMessages.errorLengthRequired,
+          message: serverMessage ?? DefaultErrorMessages.errorLengthRequiredMessage,
           icon: FontAwesomeIcons.ruler,
           type: ErrorType.validation,
         );
 
       case 412:
         return UiError(
-          title: "Precondition Failed",
-          message: serverMessage ?? "One or more request preconditions failed.",
+          title: DefaultErrorMessages.errorPreconditionFailed,
+          message: serverMessage ?? DefaultErrorMessages.errorPreconditionFailedMessage,
           icon: FontAwesomeIcons.xmark,
           type: ErrorType.validation,
         );
@@ -379,48 +459,48 @@ class ErrorHandler {
 
       case 414:
         return UiError(
-          title: "URI Too Long",
-          message: serverMessage ?? "The request URL is too long.",
+          title: DefaultErrorMessages.errorUriTooLong,
+          message: serverMessage ?? DefaultErrorMessages.errorUriTooLongMessage,
           icon: FontAwesomeIcons.link,
           type: ErrorType.validation,
         );
 
       case 415:
         return UiError(
-          title: "Unsupported Media Type",
-          message: serverMessage ?? "The media type is not supported.",
+          title: DefaultErrorMessages.errorUnsupportedMediaType,
+          message: serverMessage ?? DefaultErrorMessages.errorUnsupportedMediaTypeMessage,
           icon: FontAwesomeIcons.fileCircleXmark,
           type: ErrorType.validation,
         );
 
       case 416:
         return UiError(
-          title: "Range Not Satisfiable",
-          message: serverMessage ?? "The requested range cannot be satisfied.",
+          title: DefaultErrorMessages.errorRangeNotSatisfiable,
+          message: serverMessage ?? DefaultErrorMessages.errorRangeNotSatisfiableMessage,
           icon: FontAwesomeIcons.arrowsLeftRight,
           type: ErrorType.validation,
         );
 
       case 417:
         return UiError(
-          title: "Expectation Failed",
-          message: serverMessage ?? "The server cannot meet the Expect request header.",
+          title: DefaultErrorMessages.errorExpectationFailed,
+          message: serverMessage ?? DefaultErrorMessages.errorExpectationFailedMessage,
           icon: FontAwesomeIcons.questionCircle,
           type: ErrorType.validation,
         );
 
       case 418:
         return UiError(
-          title: "I'm a teapot",
-          message: serverMessage ?? "The server refuses to brew coffee because it's a teapot.",
+          title: DefaultErrorMessages.errorTeapot,
+          message: serverMessage ?? DefaultErrorMessages.errorTeapotMessage,
           icon: FontAwesomeIcons.mugHot,
           type: ErrorType.server,
         );
 
       case 421:
         return UiError(
-          title: "Misdirected Request",
-          message: serverMessage ?? "The request was directed to a server that cannot produce a response.",
+          title: DefaultErrorMessages.errorMisdirectedRequest,
+          message: serverMessage ?? DefaultErrorMessages.errorMisdirectedRequestMessage,
           icon: FontAwesomeIcons.route,
           type: ErrorType.validation,
         );
@@ -437,32 +517,32 @@ class ErrorHandler {
 
       case 423:
         return UiError(
-          title: "Locked",
-          message: serverMessage ?? "The resource is locked.",
+          title: DefaultErrorMessages.errorLocked,
+          message: serverMessage ?? DefaultErrorMessages.errorLockedMessage,
           icon: FontAwesomeIcons.lock,
           type: ErrorType.authentication,
         );
 
       case 424:
         return UiError(
-          title: "Failed Dependency",
-          message: serverMessage ?? "The request failed due to failure of a previous request.",
+          title: DefaultErrorMessages.errorFailedDependency,
+          message: serverMessage ?? DefaultErrorMessages.errorFailedDependencyMessage,
           icon: FontAwesomeIcons.chain,
           type: ErrorType.validation,
         );
 
       case 426:
         return UiError(
-          title: "Upgrade Required",
-          message: serverMessage ?? "Please upgrade your client to continue.",
+          title: DefaultErrorMessages.errorUpgradeRequired,
+          message: serverMessage ?? DefaultErrorMessages.errorUpgradeRequiredMessage,
           icon: FontAwesomeIcons.arrowUp,
           type: ErrorType.validation,
         );
 
       case 428:
         return UiError(
-          title: "Precondition Required",
-          message: serverMessage ?? "The request requires preconditions to be specified.",
+          title: DefaultErrorMessages.errorPreconditionRequired,
+          message: serverMessage ?? DefaultErrorMessages.errorPreconditionRequiredMessage,
           icon: FontAwesomeIcons.checkSquare,
           type: ErrorType.validation,
         );
@@ -477,16 +557,16 @@ class ErrorHandler {
 
       case 431:
         return UiError(
-          title: "Request Header Fields Too Large",
-          message: serverMessage ?? "The request headers are too large.",
+          title: DefaultErrorMessages.errorRequestHeaderFieldsTooLarge,
+          message: serverMessage ?? DefaultErrorMessages.errorRequestHeaderFieldsTooLargeMessage,
           icon: FontAwesomeIcons.textHeight,
           type: ErrorType.validation,
         );
 
       case 451:
         return UiError(
-          title: "Unavailable For Legal Reasons",
-          message: serverMessage ?? "This content is unavailable for legal reasons.",
+          title: DefaultErrorMessages.errorUnavailableForLegalReasons,
+          message: serverMessage ?? DefaultErrorMessages.errorUnavailableForLegalReasonsMessage,
           icon: FontAwesomeIcons.balanceScale,
           type: ErrorType.authentication,
         );
@@ -534,48 +614,48 @@ class ErrorHandler {
 
       case 505:
         return UiError(
-          title: "HTTP Version Not Supported",
-          message: serverMessage ?? "The HTTP version used in the request is not supported.",
+          title: DefaultErrorMessages.errorHttpVersionNotSupported,
+          message: serverMessage ?? DefaultErrorMessages.errorHttpVersionNotSupportedMessage,
           icon: FontAwesomeIcons.code,
           type: ErrorType.server,
         );
 
       case 506:
         return UiError(
-          title: "Variant Also Negotiates",
-          message: serverMessage ?? "There is an internal configuration error.",
+          title: DefaultErrorMessages.errorVariantAlsoNegotiates,
+          message: serverMessage ?? DefaultErrorMessages.errorVariantAlsoNegotiatesMessage,
           icon: FontAwesomeIcons.cogs,
           type: ErrorType.server,
         );
 
       case 507:
         return UiError(
-          title: "Insufficient Storage",
-          message: serverMessage ?? "The server is unable to store the representation.",
+          title: DefaultErrorMessages.errorInsufficientStorage,
+          message: serverMessage ?? DefaultErrorMessages.errorInsufficientStorageMessage,
           icon: FontAwesomeIcons.database,
           type: ErrorType.server,
         );
 
       case 508:
         return UiError(
-          title: "Loop Detected",
-          message: serverMessage ?? "The server detected an infinite loop.",
+          title: DefaultErrorMessages.errorLoopDetected,
+          message: serverMessage ?? DefaultErrorMessages.errorLoopDetectedMessage,
           icon: FontAwesomeIcons.repeat,
           type: ErrorType.server,
         );
 
       case 510:
         return UiError(
-          title: "Not Extended",
-          message: serverMessage ?? "Further extensions to the request are required.",
+          title: DefaultErrorMessages.errorNotExtended,
+          message: serverMessage ?? DefaultErrorMessages.errorNotExtendedMessage,
           icon: FontAwesomeIcons.plus,
           type: ErrorType.server,
         );
 
       case 511:
         return UiError(
-          title: "Network Authentication Required",
-          message: serverMessage ?? "Network authentication is required to access this resource.",
+          title: DefaultErrorMessages.errorNetworkAuthenticationRequired,
+          message: serverMessage ?? DefaultErrorMessages.errorNetworkAuthenticationRequiredMessage,
           icon: FontAwesomeIcons.wifi,
           type: ErrorType.authentication,
         );
